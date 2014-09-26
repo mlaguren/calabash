@@ -1,0 +1,33 @@
+Given(/^I log into Yamba$/) do
+  touch("* contentDescription:'More options'")
+  touch("* text:'Settings'")
+  touch("* text:'User name'")
+  keyboard_enter_text("Student")
+  touch("* id:'button1'")
+  touch("* text:'Password'")
+  keyboard_enter_text("password")
+  touch("* id:'button1'")
+  touch("* id:'action_bar_title'")
+  query("* id:'action_tweet'")
+end
+
+Given(/^I click on the tweet button$/) do
+  touch("* id:'action_tweet'")
+end
+
+When(/^I enter "(.*?)"$/) do |tweet|
+  touch("* id:'status_text'")
+  keyboard_enter_text(tweet) 
+
+  query("* id:'status_text_count'")
+end
+
+When(/^I hit Tweet$/) do
+  touch("* id:'status_button_tweet'")
+  touch("* id:'action_bar_title'")
+end
+
+Then(/^I see my Tweet$/) do
+  touch("* id:'action_refresh'")
+  # messages = query("* id:'list_item_text_message'")
+end
