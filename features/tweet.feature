@@ -1,6 +1,5 @@
 Feature: Yamba allows users to tweet
 
-@debug
 Scenario: As a logged in user, I would like to tweet a message
 
 Given I log into Yamba
